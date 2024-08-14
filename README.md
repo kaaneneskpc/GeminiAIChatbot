@@ -1,6 +1,6 @@
 # Gemini-Chat-Samples
 
-- This project is a Chatbot application written in Jetpack Compose using Gemini API.
+- ###  This project is a Chatbot application written in Jetpack Compose using Gemini API.
 
 </br>
 
