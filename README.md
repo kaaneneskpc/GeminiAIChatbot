@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/34d36c4c-e9af-412b-be2d-2e8785e74aec
 </br>
 
 <p align="center" width="100%">
-    <img width="100%" src="https://github.com/cnrture/Gemini-Chat-Samples/assets/29903779/890cf3eb-b73d-4e98-b496-6f3697e60fb9"> 
+    <img width="100%" src="https://github.com/user-attachments/assets/3ef36e8b-244f-43fb-ae6d-f0a3513c1490"> 
 </p>
 
 </br>
