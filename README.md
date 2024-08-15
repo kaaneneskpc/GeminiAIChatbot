@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/34d36c4c-e9af-412b-be2d-2e8785e74aec
 
 </br>
 
-- ### Locate the local.properties file in the project. Insert the gemini_api_key variable with the API key you created as follows and run the application.
+- ### Locate the local.properties file in the project. Insert the apiKey variable with the API key you created as follows and run the application.
 </br>
 
 <p align="center" width="100%">
