@@ -56,26 +56,27 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .background(MaterialTheme.colorScheme.primary)
-                                    .height(35.dp)
-                                    .windowInsetsPadding(
-                                        WindowInsets.systemBars.only(
-                                            WindowInsetsSides.Horizontal + WindowInsetsSides.Top
-                                        )
-                                    )
+                                    .height(56.dp)
                                     .padding(horizontal = 16.dp)
                             ) {
                                 Text(
-                                    modifier = Modifier
-                                        .align(Alignment.TopStart),
+                                    modifier = Modifier.align(Alignment.CenterStart),
                                     text = "Gemini AI Chatbot",
                                     fontSize = 19.sp,
                                     color = MaterialTheme.colorScheme.onPrimary
                                 )
                             }
+                        },
+                        content = { paddingValues ->
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(paddingValues)
+                            ) {
+                                ChatScreen(imagePicker, uriState, paddingValues = paddingValues)
+                            }
                         }
-                    ) {
-                        ChatScreen(imagePicker, uriState, paddingValues = it)
-                    }
+                    )
                 }
             }
         }
