@@ -22,12 +22,7 @@ class ChatViewModel @Inject constructor() : ViewModel() {
             is ChatUiEvent.SendPrompt -> {
                 if (event.prompt.isNotEmpty()) {
                     addPrompt(event.prompt, event.bitmap)
-
-                    if (event.bitmap != null) {
-                        getResponseWithImage(event.prompt, event.bitmap)
-                    } else {
-                        getResponse(event.prompt)
-                    }
+                    getResponse(event.prompt, event.bitmap)
                 }
             }
 
@@ -51,22 +46,9 @@ class ChatViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    private fun getResponse(prompt: String) {
+    private fun getResponse(prompt: String, bitmap: Bitmap? = null) {
         viewModelScope.launch {
-            val chat = ChatData.getResponse(prompt)
-            _chatState.update {
-                it.copy(
-                    chatList = it.chatList.toMutableList().apply {
-                        add(0, chat)
-                    }
-                )
-            }
-        }
-    }
-
-    private fun getResponseWithImage(prompt: String, bitmap: Bitmap) {
-        viewModelScope.launch {
-            val chat = ChatData.getResponseWithImage(prompt, bitmap)
+            val chat = ChatData.getResponse(prompt, bitmap)
             _chatState.update {
                 it.copy(
                     chatList = it.chatList.toMutableList().apply {
