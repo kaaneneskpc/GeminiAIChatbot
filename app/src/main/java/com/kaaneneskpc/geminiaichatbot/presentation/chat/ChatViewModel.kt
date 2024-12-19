@@ -22,6 +22,7 @@ class ChatViewModel @Inject constructor() : ViewModel() {
             is ChatUiEvent.SendPrompt -> {
                 if (event.prompt.isNotEmpty()) {
                     addPrompt(event.prompt, event.bitmap)
+                    _chatState.update { it.copy(isLoading = true) }
                     getResponse(event.prompt, event.bitmap)
                 }
             }
@@ -53,7 +54,8 @@ class ChatViewModel @Inject constructor() : ViewModel() {
                 it.copy(
                     chatList = it.chatList.toMutableList().apply {
                         add(0, chat)
-                    }
+                    },
+                    isLoading = false
                 )
             }
         }
