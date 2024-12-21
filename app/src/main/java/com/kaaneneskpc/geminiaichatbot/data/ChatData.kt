@@ -8,11 +8,9 @@ import kotlinx.coroutines.withContext
 
 object ChatData {
 
-    private val api_key = "AIzaSyA7m2oUoaexoqu1t-hUuMEFz0zwRMjVlmA"
-
     suspend fun getResponse(prompt: String, bitmap: Bitmap? = null): Chat {
         val generativeModel = GenerativeModel(
-            modelName = "gemini-2.0-flash-exp", apiKey = api_key
+            modelName = "gemini-2.0-flash-exp", apiKey = BuildConfig.API_KEY
         )
 
         try {
